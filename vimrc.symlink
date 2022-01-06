@@ -45,10 +45,10 @@ set smartcase
 set fileformats=unix,dos,mac
 
 "" detect when a file is changed
-set autoread     
+set autoread
 
 " Set magic on, for regex
-set magic        
+set magic
 set noswapfile
 
 " error bells
@@ -58,7 +58,7 @@ set t_vb=
 set tm=500
 
 "*****************************************************************************
-"" Visual Settings
+"" Configuracoes Visuais
 "*****************************************************************************
 syntax on
 set ruler
@@ -78,7 +78,10 @@ set modeline
 set modelines=10
 
 " show matching braces
-set showmatch       
+set showmatch
+
+"" Colors
+colorscheme murphy
 
 "*****************************************************************************
 "" Abreviacoes
@@ -146,5 +149,5 @@ if v:version > 703
     "" wrap lines when coming within n characters from side
     set colorcolumn=80
     "" show line relative numbers
-    set relativenumber  
+    set relativenumber
 endif
