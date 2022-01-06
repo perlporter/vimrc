@@ -36,12 +36,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
 
 "" Basic settings
 set autoread                                     " reload on external changes
 set backspace=indent,eol,start                   " backspace behaviour
 set clipboard=unnamed,unnamedplus                " enable clipboard
 set encoding=utf8                                " enable utf8 support
+set fileencoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
 set hidden                                       " hide buffers, don't close
 set nowrap                                       " disable wrapping
 set number                                       " show line numbers
@@ -63,20 +67,11 @@ set showbreak=↪                                  " wrapping character
 set so=10                                        " set lines moving vertical
 syntax on                                        " enable syntax highlightning
 
-" enable 24 bit color support if supported
-" if (has("termguicolors"))
-"     if (!(has("vim")))
-"         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"     endif
-"     set termguicolors
-" endif
-
-"" Statusline
-"set laststatus=1                                 " disable statusline
-"set ruler rulerformat=%40(%=%<%F%m\ \
-"                      \›\ %{getfsize(@%)}B\ \
-"                      \›\ %l/%L:%v%)
+"" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
 
 "" Tabs & Indentation
 set autoindent expandtab                         " autoindentation & tabbing
@@ -121,8 +116,7 @@ if v:version > 703
   let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
   let g:NERDTreeWinSize = 50
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
-  nnoremap <silent> <F2> :NERDTreeFind<CR>
-  nnoremap <silent> <F3> :NERDTreeToggle<CR>
+  nmap <C-a> :NERDTreeToggle<CR>
 endif
 
 "" AirLine 
