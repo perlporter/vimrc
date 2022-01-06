@@ -30,10 +30,6 @@ set linebreak                                    " set soft wrapping
 set showbreak=↪                                  " wrapping character
 set so=10                                        " set lines moving vertical
 
-"" Mode Settings
-let &t_SI.="\e[5 q"                              "SI = INSERT mode
-let &t_SR.="\e[4 q"                              "SR = REPLACE mode
-let &t_EI.="\e[1 q"                              "EI = NORMAL mode (ELSE)
 
 "" Statusline
 "set laststatus=1                                 " disable statusline
@@ -64,6 +60,10 @@ nmap <leader>l :set list!<cr>                    " show invisible
 
 "" Compatilibity versions
 if v:version > 703
+  "" Mode Settings
+  let &t_SI.="\e[5 q"                              "SI = INSERT mode
+  let &t_SR.="\e[4 q"                              "SR = REPLACE mode
+  let &t_EI.="\e[1 q"                              "EI = NORMAL mode (ELSE)
   set colorcolumn=80                               " wrap lines
   set relativenumber                               " show line relative numbers
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
