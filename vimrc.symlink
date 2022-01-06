@@ -30,6 +30,7 @@ endif
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
+Plug 'joshdick/onedark.vim'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -56,6 +57,7 @@ set nowrap                                       " turn on line wrapping
 set linebreak                                    " set soft wrapping
 set showbreak=↪                                  " wrapping character
 set so=10                                        " set lines moving vertical
+colorscheme onedark
 
 
 "" Statusline
