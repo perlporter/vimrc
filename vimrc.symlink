@@ -36,7 +36,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -112,6 +111,7 @@ if v:version > 703
   Plug 'tpope/vim-fugitive'
   Plug 'sheerun/vim-polyglot'
   Plug 'Yggdroot/indentLine'
+  Plug 'scrooloose/nerdtree'
 endif
 
 "" AirLine 
