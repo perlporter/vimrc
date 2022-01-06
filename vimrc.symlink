@@ -81,7 +81,7 @@ set modelines=10
 set showmatch
 
 "" Colors
-colorscheme murphy
+colorscheme ron
 
 "*****************************************************************************
 "" Abreviacoes
