@@ -30,6 +30,7 @@ endif
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
+Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 
 "" Basic settings
@@ -52,12 +53,11 @@ set scrolloff=999                                " cursor position vertically
 set showmatch                                    " show matching brackets
 set cursorline                                   " cursorline
 set splitbelow                                   " split behavior
-syntax on                                        " enable syntax highlightning
 set nowrap                                       " turn on line wrapping
 set linebreak                                    " set soft wrapping
 set showbreak=↪                                  " wrapping character
 set so=10                                        " set lines moving vertical
-colorscheme onedark
+syntax on                                        " enable syntax highlightning
 
 
 "" Statusline
@@ -100,3 +100,4 @@ endif
 
 
 call plug#end()
+colorscheme onedark
