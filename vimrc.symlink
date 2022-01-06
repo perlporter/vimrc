@@ -1,153 +1,45 @@
-" vimrc
-" Autor: Wendell Borges [perlporter@gmail.com]
 
-"*****************************************************************************
-"" Comfiguracoes basicas
-"*****************************************************************************"
-"
-filetype plugin indent on
+"" Basic settings
+set autoread                                     " reload on external file changes
+set backspace=indent,eol,start                   " backspace behaviour
+set clipboard=unnamed,unnamedplus                " enable clipboard
+set encoding=utf8                                " enable utf8 support
+set hidden                                       " hide buffers, don't close
+set mouse=a                                      " enable mouse support
+set nowrap                                       " disable wrapping
+set number                                       " show line numbers
+set term=xterm-256color                          " terminal type
+set wildmenu wildmode=longest:full,full          " wildmode settings
 
-"" Encoding
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
+"" UI settings
+filetype plugin indent on                        " enable filetype detection
+set listchars=eol:¶,trail:•,tab:▸\               " whitespace characters
+set scrolloff=999                                " center cursor position vertically
+set showbreak=¬\                                 " Wrapping character
+set showmatch                                    " show matching brackets
+syntax on                                        " enable syntax highlightning
 
-"" faster redrawing
-set ttyfast
+"" Statusline
+set laststatus=0                                 " disable statusline
+set ruler rulerformat=%40(%=%<%F%m\ \
+                      \›\ %{getfsize(@%)}B\ \
+                      \›\ %l/%L:%v%)
 
-"" Fix backspace indent
-set backspace=indent,eol,start
+"" Tabs & Indentation
+set autoindent expandtab                         " autoindentation & tabbing
+set shiftwidth=2 softtabstop=2 tabstop=2         " 1 tab = 2 spaces
 
-"" Tabs
-"" the visible width of tabs
-set tabstop=4
-"" edit as if the tabs are 4 characters wide
-set softtabstop=0
-set shiftwidth=4
-set expandtab
+"" Search settings
+set hlsearch ignorecase incsearch smartcase      " search options
 
-"" Map leader to ,
-let mapleader=','
+"" Undo & Backup
+set nobackup noswapfile nowritebackup            " disable backup/swap files
+set undofile undodir=~/.vim/undo undolevels=9999 " undo options
 
-"" Enable hidden buffers
-set hidden
+"" Performace Tunning
+set lazyredraw                                   " enable lazyredraw
+set nocursorline                                 " disable cursorline
+set ttyfast                                      " enable fast terminal connection
 
-"" Searching
-"" highlight search results
-set hlsearch
-"" set incremental search, like modern browsers
-set incsearch
-"" case insensitive searching
-set ignorecase
-"" case-sensitive if expresson contains a capital letter
-set smartcase
-
-set fileformats=unix,dos,mac
-
-"" detect when a file is changed
-set autoread
-
-" Set magic on, for regex
-set magic
-set noswapfile
-
-" error bells
-set noerrorbells
-set visualbell
-set t_vb=
-set tm=500
-
-"*****************************************************************************
-"" Configuracoes Visuais
-"*****************************************************************************
-syntax on
-set ruler
-
-"" show line numbers
-set number
-set cursorline
-
-" Better command line completion
-set wildmenu
-
-"" show the status line all the time
-set laststatus=2
-
-"" Use modeline overrides
-set modeline
-set modelines=10
-
-" show matching braces
-set showmatch
-
-"" Colors
-colorscheme ron
-
-"*****************************************************************************
-"" Abreviacoes
-"*****************************************************************************
-" Abreviacoes uteis para sua sanidade mental
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
-
-"*****************************************************************************
-"" Commands
-"*****************************************************************************
-" remove trailing whitespaces
-command! FixWhitespace :%s/\s\+$//e
-
-"*****************************************************************************
-"" Autocmd Rules
-"*****************************************************************************
-"" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
-augroup vimrc-sync-fromstart
-  autocmd!
-  autocmd BufEnter * :syntax sync maxlines=200
-augroup END
-
-"" Remember cursor position
-augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
-
-"" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
-
-"" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
-
-"" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
-
-"" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-
-if v:version > 703
-    "" wrap lines when coming within n characters from side
-    set colorcolumn=80
-    "" show line relative numbers
-    set relativenumber
-endif
+"" Key Mapping
+let mapleader=','                                " leader key
