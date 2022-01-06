@@ -36,6 +36,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -64,13 +66,13 @@ set so=10                                        " set lines moving vertical
 syntax on                                        " enable syntax highlightning
 
 " enable 24 bit color support if supported
-if (has("termguicolors"))
-    if (!(has("vim")))
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    endif
-    set termguicolors
-endif
+" if (has("termguicolors"))
+"     if (!(has("vim")))
+"         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"     endif
+"     set termguicolors
+" endif
 
 "" Statusline
 "set laststatus=1                                 " disable statusline
@@ -110,6 +112,10 @@ if v:version > 703
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
 endif
 
+" AirLine """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'gruvbox'
 
 call plug#end()
 colorscheme gruvbox
