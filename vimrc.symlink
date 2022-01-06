@@ -34,7 +34,6 @@ set hlsearch ignorecase incsearch smartcase      " search options
 
 "" Undo & Backup
 set nobackup noswapfile nowritebackup            " disable backup/swap files
-set undofile undodir=~/.vim/undo undolevels=9999 " undo options
 
 "" Performace Tunning
 set lazyredraw                                   " enable lazyredraw
@@ -43,3 +42,11 @@ set ttyfast                                      " enable fast terminal connecti
 
 "" Key Mapping
 let mapleader=','                                " leader key
+
+
+"" Compatilibity versions
+if v:version > 703
+  set colorcolumn=80                               " wrap lines
+  set relativenumber                               " show line relative numbers
+  set undofile undodir=~/.vim/undo undolevels=9999 " undo options
+endif
