@@ -7,6 +7,8 @@ set encoding=utf8                                " enable utf8 support
 set hidden                                       " hide buffers, don't close
 set nowrap                                       " disable wrapping
 set number                                       " show line numbers
+set showcmd                                      " show incomplete commands
+set cmdheight=2                                  " command bar height
 set term=xterm-256color                          " terminal type
 set wildmenu wildmode=longest:full,full          " wildmode settings
 
@@ -17,13 +19,14 @@ set scrolloff=999                                "cursor position vertically
 set showbreak=¬\                                 " Wrapping character
 set showmatch                                    " show matching brackets
 set cursorline                                   " cursorline
+set splitbelow
 syntax on                                        " enable syntax highlightning
 
 "" Statusline
-set laststatus=0                                 " disable statusline
-set ruler rulerformat=%40(%=%<%F%m\ \
-                      \›\ %{getfsize(@%)}B\ \
-                      \›\ %l/%L:%v%)
+"set laststatus=1                                 " disable statusline
+"set ruler rulerformat=%40(%=%<%F%m\ \
+"                      \›\ %{getfsize(@%)}B\ \
+"                      \›\ %l/%L:%v%)
 
 "" Tabs & Indentation
 set autoindent expandtab                         " autoindentation & tabbing
@@ -31,6 +34,8 @@ set shiftwidth=2 softtabstop=2 tabstop=2         " 1 tab = 2 spaces
 
 "" Search settings
 set hlsearch ignorecase incsearch smartcase      " search options
+"hi Search ctermbg=Yellow
+"hi Search ctermfg=Red
 
 "" Undo & Backup
 set nobackup noswapfile nowritebackup            " disable backup/swap files
@@ -41,7 +46,7 @@ set ttyfast                                      " fast terminal connection
 
 "" Key Mapping
 let mapleader=','                                " leader key
-noremap <space> :set hlsearch! hlsearch?<cr>     " clear highlighted search
+nnoremap <CR> :noh<CR><CR>                       " unsets the last search 
 nmap <leader>l :set list!<cr>                    " show invisible
 
 "" Compatilibity versions
