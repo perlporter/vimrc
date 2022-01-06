@@ -30,7 +30,6 @@ endif
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
-Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
@@ -110,6 +109,7 @@ if v:version > 703
   set relativenumber                               " show line relative numbers
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
   Plug 'tpope/vim-fugitive'
+  Plug 'sheerun/vim-polyglot'
 endif
 
 " AirLine """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
