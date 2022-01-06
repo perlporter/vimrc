@@ -1,7 +1,7 @@
 ""
 ""  vimrc
 ""  Autor: Wendell Borges [perlporter@gmail.com]
-""  
+""
 ""
 
 "*****************************************************************************
@@ -91,7 +91,7 @@ set ttyfast                                      " fast terminal connection
 
 "" Key Mapping
 let mapleader=','                                " leader key
-nnoremap <CR> :noh<CR><CR>                       " unsets the last search 
+nnoremap <CR> :noh<CR><CR>                       " unsets the last search
 nmap <leader>l :set list!<cr>                    " show invisible
 
 "" Compatilibity versions
@@ -117,9 +117,19 @@ if v:version > 703
   let g:NERDTreeWinSize = 50
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
   nmap <C-a> :NERDTreeToggle<CR>
+  Plug 'dense-analysis/ale'
+  "" ALE
+  let g:ale_linters = {
+  \}
+
+  let g:ale_fixers = {
+  \   '*': ['trim_whitespace'],
+  \}
+
+  let g:ale_fix_on_save = 1
 endif
 
-"" AirLine 
+"" AirLine
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox'
