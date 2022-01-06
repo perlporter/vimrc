@@ -36,7 +36,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
-Plug 'Yggdroot/indentLine'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -111,6 +110,7 @@ if v:version > 703
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
   Plug 'tpope/vim-fugitive'
   Plug 'sheerun/vim-polyglot'
+  Plug 'Yggdroot/indentLine'
 endif
 
 "" AirLine 
