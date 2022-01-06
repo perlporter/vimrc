@@ -101,4 +101,4 @@ endif
 
 
 call plug#end()
-colorscheme onedark
+colorscheme gruvbox
