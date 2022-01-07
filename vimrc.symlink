@@ -35,8 +35,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -94,10 +92,6 @@ let mapleader=','                                " leader key
 nnoremap <CR> :noh<CR><CR>                       " unsets the last search
 nmap <leader>l :set list!<cr>                    " show invisible
 
-"" AirLine
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
 
 "" Compatilibity versions
 if v:version > 703
@@ -108,6 +102,13 @@ if v:version > 703
   set colorcolumn=80                               " wrap lines
   set relativenumber                               " show line relative numbers
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
+
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  "" AirLine
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'gruvbox'
   Plug 'tpope/vim-fugitive'
   Plug 'sheerun/vim-polyglot'
   Plug 'Yggdroot/indentLine'
