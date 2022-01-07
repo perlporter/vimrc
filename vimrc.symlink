@@ -32,8 +32,6 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
@@ -94,10 +92,6 @@ let mapleader=','                                " leader key
 nnoremap <CR> :noh<CR><CR>                       " unsets the last search
 nmap <leader>l :set list!<cr>                    " show invisible
 
-"" AirLine
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
 
 "" Compatilibity versions
 if v:version > 703
@@ -135,6 +129,12 @@ if v:version > 703
   let g:ale_fix_on_save = 1
 endif
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"" AirLine
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'gruvbox'
 
 "" IndentLine
 let g:indentLine_faster = 1
