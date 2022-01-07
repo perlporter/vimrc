@@ -37,6 +37,47 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
+" startify
+" https://github.com/ryanoasis/vim-devicons/issues/302
+function! StartifyEntryFormat()
+return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+
+" Don't change to directory when selecting a file
+let g:startify_files_number = 5
+let g:startify_change_to_dir = 0
+let g:startify_custom_header = [ ]
+let g:startify_relative_path = 1
+let g:startify_use_env = 1
+
+let g:startify_custom_header = [
+            \ '   ',
+            \ '   ',
+            \ ]
+
+" Custom startup list, only show MRU from current directory/project
+let g:startify_lists = [
+\  { 'type': 'dir',       'header': [ 'Files '. getcwd() ] },
+\  { 'type': 'sessions',  'header': [ 'Sessions' ]       },
+\  { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      },
+\  { 'type': 'commands',  'header': [ 'Commands' ]       },
+\ ]
+
+let g:startify_commands = [
+\   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+\   { 'cc': [ 'Clean Plugin Manager', ':PlugClean' ] },
+\   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+\ ]
+
+let g:startify_bookmarks = [
+    \ { 'n': '~/.vimrc' },
+    \ { 't': '~/.tmux.conf' },
+    \ { 'g': '~/.gitconfig' },
+    \ { 'z': '~/.zshrc' }
+\ ]
+
+autocmd User Startified setlocal cursorline
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -136,10 +177,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox'
 
 "" IndentLine
+let g:indentLine_faster = 1
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
+let g:indentLine_fileTypeExclude = [ 'startify' ]
 
 call plug#end()
 colorscheme gruvbox
