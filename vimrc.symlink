@@ -35,7 +35,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'
 
 "" Basic settings
 set autoread                                     " reload on external changes
@@ -103,6 +102,8 @@ if v:version > 703
   set colorcolumn=80                               " wrap lines
   set relativenumber                               " show line relative numbers
   set undofile undodir=~/.vim/undo undolevels=9999 " undo options
+
+  Plug 'airblade/vim-gitgutter'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
