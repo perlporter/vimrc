@@ -36,6 +36,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/loremipsum'
+Plug 'tpope/vim-surround'
 
 "" Basic settings
 set autoread                                     " reload on external changes
