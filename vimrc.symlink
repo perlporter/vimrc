@@ -37,6 +37,7 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
+Plug 'perlporter/vim-auto-markdown'
 
 "" Basic settings
 set autoread                                     " reload on external changes
